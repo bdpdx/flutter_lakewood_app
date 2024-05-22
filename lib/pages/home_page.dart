@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_lakewood_app/pages/list_page.dart';
+import 'package:flutter_lakewood_app/styles/text_styles.dart';
 import 'package:flutter_lakewood_app/utilities/bordered.dart';
 
 class HomePage extends StatelessWidget {
@@ -17,26 +18,47 @@ class HomePage extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-            Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  const Text("Get ready for"),
-                  const Text("Lake Oswego"),
-                  const Text("Enjoy this immersive and refreshing way to explore Lake Oswego through our new mobile app"),
-                  ElevatedButton(
-                    onPressed: () {
-                      // Navigate to ListPage when the button is pressed
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => ListPage()),
-                      );
-                    },
-                    child: const Text('Go to List Page'),
+            Column(
+              children: [
+                const Spacer(flex: 5),
+                Expanded(
+                  flex: 5,
+                  child: Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        const Text(
+                          'Get ready for',
+                          style: TextStyles.headline1,
+                        ),
+                        const SizedBox(height: 4),
+                        const Text(
+                          'Lake Oswego',
+                          style: TextStyles.title,
+                        ),
+                        const SizedBox(height: 8),
+                        const Text(
+                          'Enjoy this immersive and refreshing way to explore Lake Oswego through our new mobile app',
+                          style: TextStyles.subtitle,
+                          textAlign: TextAlign.center,
+                        ),
+                        const SizedBox(height: 24),
+                        ElevatedButton(
+                          onPressed: () {
+                            // Navigate to ListPage when the button is pressed
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => ListPage()),
+                            );
+                          },
+                          child: const Text('Go to List Page'),
+                        ),
+                      ],
+                    ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ],
         ),
