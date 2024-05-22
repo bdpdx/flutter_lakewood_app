@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
 class TextStyles {
+  static const TextStyle button = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.bold,
+  );
+
   static const TextStyle headline1 = TextStyle(
     color: Colors.white,
     fontSize: 24,

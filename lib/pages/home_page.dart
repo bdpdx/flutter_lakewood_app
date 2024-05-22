@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_lakewood_app/pages/list_page.dart';
+import 'package:flutter_lakewood_app/styles/button_styles.dart';
 import 'package:flutter_lakewood_app/styles/text_styles.dart';
 import 'package:flutter_lakewood_app/utilities/bordered.dart';
 
@@ -52,6 +53,7 @@ class HomePage extends StatelessWidget {
                               MaterialPageRoute(builder: (context) => ListPage()),
                             );
                           },
+                          style: ButtonStyles.primary,                     
                           child: const Text('Go to List Page'),
                         ),
                       ],
