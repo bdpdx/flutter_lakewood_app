@@ -11,7 +11,12 @@ class HomePage extends StatelessWidget {
       body: Bordered(
         child: Stack(
           children: [
-            const Placeholder(),
+            Positioned.fill(
+              child: Image.asset(
+                'assets/images/Photos/Copy of 112 NS Circle.jpg',
+                fit: BoxFit.cover,
+              ),
+            ),
             Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
