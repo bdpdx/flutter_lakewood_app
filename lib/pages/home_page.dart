@@ -31,17 +31,17 @@ class HomePage extends StatelessWidget {
                       children: [
                         const Text(
                           'Get ready for',
-                          style: TextStyles.headline1,
+                          style: TextStyles.homePageHeadline,
                         ),
                         const SizedBox(height: 4),
                         const Text(
                           'Lake Oswego',
-                          style: TextStyles.title,
+                          style: TextStyles.homePageTitle,
                         ),
                         const SizedBox(height: 8),
                         const Text(
                           'Enjoy this immersive and refreshing way to explore Lake Oswego through our new mobile app',
-                          style: TextStyles.subtitle,
+                          style: TextStyles.homePageSubtitle,
                           textAlign: TextAlign.center,
                         ),
                         const SizedBox(height: 24),
@@ -50,10 +50,10 @@ class HomePage extends StatelessWidget {
                             // Navigate to ListPage when the button is pressed
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => ListPage()),
+                              MaterialPageRoute(builder: (context) => const ListPage()),
                             );
                           },
-                          style: ButtonStyles.primary,                     
+                          style: ButtonStyles.homePageButton,                     
                           child: const Text('Go to List Page'),
                         ),
                       ],

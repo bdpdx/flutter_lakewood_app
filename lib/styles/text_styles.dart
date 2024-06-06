@@ -7,25 +7,31 @@ class TextStyles {
     fontWeight: FontWeight.bold,
   );
 
-  static const TextStyle button = TextStyle(
+  static const TextStyle homePageButton = TextStyle(
     fontSize: 18,
     fontWeight: FontWeight.bold,
   );
 
-  static const TextStyle headline1 = TextStyle(
+  static const TextStyle homePageHeadline = TextStyle(
     color: Colors.white,
     fontSize: 24,
     fontWeight: FontWeight.bold,
   );
 
-  static const TextStyle title = TextStyle(
+  static const TextStyle homePageTitle = TextStyle(
     color: Colors.white,
     fontSize: 32,
     fontWeight: FontWeight.bold,
   );
 
-  static const TextStyle subtitle = TextStyle(
+  static const TextStyle homePageSubtitle = TextStyle(
     color: Colors.white,
     fontSize: 18,
+  );
+
+  static const TextStyle listPageSectionHeading = TextStyle(
+    color: Colors.black,
+    fontSize: 18,
+    fontWeight: FontWeight.bold,
   );
 }
