@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_lakewood_app/pages/detail_page.dart';
 import 'package:flutter_lakewood_app/styles/app_colors.dart';
 import 'package:flutter_lakewood_app/styles/text_styles.dart';
+import 'package:flutter_lakewood_app/views/single_home_list_tile.dart';
 
 class ListPage extends StatelessWidget {
   final List<String> items = List<String>.generate(20, (index) => 'Item $index');
@@ -96,8 +97,11 @@ class ListPage extends StatelessWidget {
                 child: ListView.builder(
                   itemCount: items.length,
                   itemBuilder: (context, index) {
-                    return ListTile(
-                      title: Text(items[index]),
+                    return SingleHomeListTile(
+                      leading: const Icon(Icons.home, size: 40),
+                      title: items[index],
+                      subtitle: 'subtitle',
+                      trailing: const Icon(Icons.arrow_forward),
                       onTap: () {
                         Navigator.push(
                           context,
