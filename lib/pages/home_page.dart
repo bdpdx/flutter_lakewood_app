@@ -50,7 +50,7 @@ class HomePage extends StatelessWidget {
                             // Navigate to ListPage when the button is pressed
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => const ListPage()),
+                              MaterialPageRoute(builder: (context) => ListPage()),
                             );
                           },
                           style: ButtonStyles.homePageButton,                     

@@ -4,7 +4,9 @@ import 'package:flutter_lakewood_app/styles/app_colors.dart';
 import 'package:flutter_lakewood_app/styles/text_styles.dart';
 
 class ListPage extends StatelessWidget {
-  const ListPage({super.key});
+  final List<String> items = List<String>.generate(20, (index) => 'Item $index');
+
+  ListPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -89,15 +91,22 @@ class ListPage extends StatelessWidget {
                   );
                 }),
               ),
-              ElevatedButton(
-                onPressed: () {
-                  // Navigate to NewScreen2 using Navigator.push
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const DetailPage()),
-                  );
-                },
-                child: const Text('Go to Detail Page'),
+              const SizedBox(height: 20),
+              Expanded(
+                child: ListView.builder(
+                  itemCount: items.length,
+                  itemBuilder: (context, index) {
+                    return ListTile(
+                      title: Text(items[index]),
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const DetailPage()),
+                        );
+                      },
+                    );
+                  },
+                ),
               ),
             ],
           ),
