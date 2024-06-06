@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_lakewood_app/pages/detail_page.dart';
+import 'package:flutter_lakewood_app/styles/text_styles.dart';
 
 class ListPage extends StatelessWidget {
   const ListPage({super.key});
@@ -8,30 +9,57 @@ class ListPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('List Page'),
+        title: const Text(
+          'Explore Lake Oswego',
+          style: TextStyles.appBarTitle,
+        ),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ElevatedButton(
-              onPressed: () {
-                // Navigate back to the previous screen using Navigator.pop
-                Navigator.pop(context);
-              },
-              child: const Text('Back to Home Page'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                // Navigate to NewScreen2 using Navigator.push
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const DetailPage()),
-                );
-              },
-              child: const Text('Go to Detail Page'),
-            ),
-          ],
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 12.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              TextField(
+                decoration: InputDecoration(
+                  hintText: 'Search here',
+                  prefixIcon: const Icon(Icons.search, color: Colors.grey),
+                  suffixIcon: IconButton(
+                    icon: const Icon(Icons.clear, color: Colors.grey),
+                    onPressed: () {
+                      // Add functionality to clear the text field
+                    },
+                  ),
+                  fillColor: Colors.grey[200],
+                  filled: true,
+                  border: const OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                  ),
+                  enabledBorder: const OutlineInputBorder(
+                    borderSide: BorderSide.none,
+                    borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                  ),
+                  focusedBorder: const OutlineInputBorder(
+                    borderSide: BorderSide.none,
+                    borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                  ),
+                  contentPadding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 20.0),
+                ),
+                style: const TextStyle(fontSize: 16.0),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  // Navigate to NewScreen2 using Navigator.push
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const DetailPage()),
+                  );
+                },
+                child: const Text('Go to Detail Page'),
+              ),
+            ],
+          ),
         ),
       ),
     );
