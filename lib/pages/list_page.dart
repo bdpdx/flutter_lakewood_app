@@ -4,10 +4,15 @@ import 'package:flutter_lakewood_app/styles/app_colors.dart';
 import 'package:flutter_lakewood_app/styles/text_styles.dart';
 import 'package:flutter_lakewood_app/views/single_home_list_tile.dart';
 
-class ListPage extends StatelessWidget {
-  final List<String> items = List<String>.generate(20, (index) => 'Item $index');
+class ListPage extends StatefulWidget {
+  const ListPage({super.key});
 
-  ListPage({super.key});
+  @override
+  State<ListPage> createState() => _ListPageState();
+}
+
+class _ListPageState extends State<ListPage> {
+  final List<String> items = List<String>.generate(20, (index) => 'Item $index');
 
   @override
   Widget build(BuildContext context) {
