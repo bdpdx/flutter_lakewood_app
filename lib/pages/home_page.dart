@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_lakewood_app/pages/list_page.dart';
+import 'package:flutter_lakewood_app/pages/stateful_widget_demo_page.dart';
 import 'package:flutter_lakewood_app/styles/button_styles.dart';
 import 'package:flutter_lakewood_app/styles/text_styles.dart';
 import 'package:flutter_lakewood_app/utilities/bordered.dart';
@@ -55,6 +56,17 @@ class HomePage extends StatelessWidget {
                           },
                           style: ButtonStyles.homePageButton,                     
                           child: const Text('Go to List Page'),
+                        ),
+                        ElevatedButton(
+                          onPressed: () {
+                            // Navigate to ListPage when the button is pressed
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => const StatefulWidgetDemoPage()),
+                            );
+                          },
+                          style: ButtonStyles.homePageButton,                     
+                          child: const Text('Stateful Widget Demo'),
                         ),
                       ],
                     ),
