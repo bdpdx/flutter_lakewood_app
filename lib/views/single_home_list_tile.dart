@@ -1,54 +1,62 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_lakewood_app/styles/text_styles.dart';
 
 class SingleHomeListTile extends StatelessWidget {
-  final Widget leading;
+  final ImageProvider imageProvider;
   final String title;
   final String subtitle;
-  final Widget trailing;
+  final String description;
   final VoidCallback onTap;
 
   const SingleHomeListTile({
     super.key,
-    required this.leading,
+    required this.imageProvider,
     required this.title,
     required this.subtitle,
-    required this.trailing,
+    required this.description,
     required this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
+    return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10.0),
+      ),
+      margin: const EdgeInsets.all(10.0),
+      child: InkWell(
+        onTap: onTap,
         child: Row(
           children: [
-            leading,
-            const SizedBox(width: 10),
+            Container(
+              width: MediaQuery.of(context).size.width / 3,
+              height: 100.0,
+              decoration: BoxDecoration(
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(10.0),
+                  bottomLeft: Radius.circular(10.0),
+                ),
+                image: DecorationImage(
+                  image: imageProvider,
+                  fit: BoxFit.cover,
+                ),
+              )
+            ),
             Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    title,
-                    style: const TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  const SizedBox(height: 5),
-                  Text(
-                    subtitle,
-                    style: const TextStyle(
-                      fontSize: 14,
-                      color: Colors.grey,
-                    ),
-                  ),
-                ],
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(title, style: TextStyles.listPageCardTitle),
+                    const SizedBox(height: 1.0),
+                    Text(subtitle, style: TextStyles.listPageCardSubtitle),
+                    const SizedBox(height: 10.0),
+                    Text(description, style: TextStyles.listPageCardDescription),
+                  ],
+                )
               ),
             ),
-            trailing,
           ],
         ),
       ),

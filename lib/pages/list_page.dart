@@ -98,10 +98,10 @@ class ListPage extends StatelessWidget {
                   itemCount: items.length,
                   itemBuilder: (context, index) {
                     return SingleHomeListTile(
-                      leading: const Icon(Icons.home, size: 40),
+                      imageProvider: const NetworkImage('https://www.houseplans.net/news/wp-content/uploads/2023/07/57260-768.jpeg'),
                       title: items[index],
                       subtitle: 'subtitle',
-                      trailing: const Icon(Icons.arrow_forward),
+                      description: 'description',
                       onTap: () {
                         Navigator.push(
                           context,

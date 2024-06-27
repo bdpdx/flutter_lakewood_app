@@ -34,4 +34,20 @@ class TextStyles {
     fontSize: 18,
     fontWeight: FontWeight.bold,
   );
+
+  static const TextStyle listPageCardTitle = TextStyle(
+    color: Colors.black,
+    fontSize: 18,
+    fontWeight: FontWeight.bold,
+  );
+
+  static TextStyle listPageCardSubtitle = TextStyle(
+    color: Colors.grey[800]!,
+    fontSize: 14,
+  );
+
+  static const TextStyle listPageCardDescription = TextStyle(
+    color: Colors.black,
+    fontSize: 14,
+  );
 }
