@@ -12,6 +12,10 @@ class ListPage extends StatefulWidget {
 }
 
 class _ListPageState extends State<ListPage> {
+  int _selectedButtonIndex = 0;
+
+  final List _buttonTitles = ['All', 'Historic', 'New', 'Old'];
+
   final List<String> items = List<String>.generate(20, (index) => 'Item $index');
 
   @override
@@ -73,11 +77,14 @@ class _ListPageState extends State<ListPage> {
                     padding: const EdgeInsets.symmetric(horizontal: 4.0),
                     child: OutlinedButton(
                       onPressed: () {
+                        setState(() {
+                          _selectedButtonIndex = index;
+                        });
                       },
                       style: OutlinedButton.styleFrom(
-                        backgroundColor: index == 0 ? AppColors.darkGreen : Colors.transparent,
+                        backgroundColor: index == _selectedButtonIndex ? AppColors.darkGreen : Colors.transparent,
                         side: BorderSide(
-                          color: index == 0 ? AppColors.darkGreen : Colors.grey,
+                          color: index == _selectedButtonIndex ? AppColors.darkGreen : Colors.grey,
                           width: 1.0,
                         ),
                         shape: RoundedRectangleBorder(
@@ -87,9 +94,9 @@ class _ListPageState extends State<ListPage> {
                         minimumSize: const Size(0, 30),
                       ),
                       child: Text(
-                        'Button ${index + 1}',
+                        _buttonTitles[index],
                         style: TextStyle(
-                          color: index == 0? Colors.white : Colors.grey,
+                          color: index == _selectedButtonIndex? Colors.white : Colors.grey,
                           fontSize: 14.0,
                         ),
                       ),
